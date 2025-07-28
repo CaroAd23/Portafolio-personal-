@@ -1,0 +1,56 @@
+ccs grid 
+body {
+  background-color: black;
+  margin: 0;
+}
+.container {
+  display: grid; /*activa el display grid para un contenedor */
+  /* gap: 15px;espaciado vertical entre elementos */
+  width: auto;
+  /* row-gap: 15px;espaciado horizontal entre elementos de uan columna*/
+  grid-template-columns: repeat(
+    auto-fit,
+    minmax(200px, 1fr)
+  ); /*la propiedad template column de grid permite alinear el contenido en columnas*/
+  /*la propiedad repreat permite optimizar la asignacion de factores de tamaño y espaciado */
+  /*la propiedad fill permite ajustar el contenido, de las columnas sin rellenar todos el espacio disponible, ideal para cuando hay pocos elementos */
+  /*la propiedad fit permite ajustar el contenido de las columnas ajustando el tamaño de los elementos segun el espacio disponible*/
+  /*la propiedad minmax permite definir un tamaño minimo y maximo permitido para un elemento*/
+  background-color: rgb(0, 0, 0);
+  grid-template-rows: auto auto auto auto auto; /*define filas para alinear contenido*/
+}
+.contenedor{
+    display: grid;
+    width: auto;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    grid-template-rows: auto auto auto auto auto
+}
+.contenedor header {
+  /*la propiedad nth-child permite identificar el primer elemento hijo dentro de un contenedor*/
+  background-color: rgb(82, 82, 82);
+  grid-column: 1 / 6; /*grid-column-start permite definin en que columna empieza un contenido*/
+  grid-row: 1 / 4; /*grid-column-end permitte definir en que columna termita un contenido*/
+  height: 150px;
+  text-align: center;
+}
+.contenedor nav {
+  background-color: rgb(192, 191, 191);
+  grid-column: 1 / 6; /*esta misma exprecion 2 / 4 se puede expresar asi grid-column-start: span 2; grid-column-end: 3;*/
+  grid-row: 4 / 6;
+  text-align: center;
+}
+.contenedor main {
+  background-color: rgb(105, 105, 105);
+  grid-column: 1/ 6;
+  grid-row: 6 / 6;
+  height: 600px;
+  text-align: center;
+}
+.contenedor footer {
+  background-color: rgb(190, 190, 190);
+  grid-column: 1 / 6;
+  grid-row: 7 / 7;
+  height: 200px;
+  text-align: center;
+}
+
